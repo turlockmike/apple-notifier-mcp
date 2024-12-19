@@ -144,6 +144,32 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 - Built with the [Model Context Protocol (MCP) SDK](https://github.com/anthropics/model-context-protocol)
 - Inspired by the need for native notifications in Claude Desktop and Cline
 
+## CI/CD
+
+This project uses GitHub Actions for continuous integration and deployment:
+
+### Continuous Integration
+- Runs on every push and pull request to `main`
+- Tests on macOS with Node.js 18.x and 20.x
+- Builds the project
+- Runs tests
+- Verifies osascript functionality
+- Tests basic notification functionality
+
+### Publishing to NPM
+To publish a new version:
+1. Update version in `package.json`
+2. Create and push a new tag:
+   ```bash
+   git tag v1.0.0  # Use appropriate version
+   git push origin v1.0.0
+   ```
+3. Create a new release on GitHub using the tag
+4. The GitHub Action will automatically:
+   - Build the project
+   - Run tests
+   - Publish to NPM
+
 ## Support
 
 If you encounter any issues or have questions:
