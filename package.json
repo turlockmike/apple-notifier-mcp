@@ -1,12 +1,39 @@
 {
-  "name": "apple-notifier-mcp",
+  "name": "@turlockmike/apple-notifier-mcp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An MCP server for sending native macOS notifications",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turlockmike/apple-notifier-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "macos",
+    "notifications",
+    "osascript",
+    "claude",
+    "anthropic"
+  ],
+  "bugs": {
+    "url": "https://github.com/turlockmike/apple-notifier-mcp/issues"
+  },
+  "homepage": "https://github.com/turlockmike/apple-notifier-mcp#readme",
   "scripts": {
     "build": "tsc && chmod +x build/index.js",
     "start": "node build/index.js",
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "clean": "rm -rf build",
+    "prepare": "npm run clean && npm run build",
+    "prepublishOnly": "npm test",
+    "test": "echo \"No tests yet\""
   },
   "type": "module",
   "keywords": [],
