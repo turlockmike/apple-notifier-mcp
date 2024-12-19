@@ -4,6 +4,9 @@
   "description": "An MCP server for sending native macOS notifications",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "bin": {
+    "apple-notifier-mcp": "./build/index.js"
+  },
   "files": [
     "build/**/*"
   ],
