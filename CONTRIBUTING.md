@@ -44,11 +44,12 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 ## Development Process
 
 1. Fork the repo and create your branch from `main`
-2. Run `npm install` to install dependencies
-3. Make your changes
-4. Test your changes thoroughly
-5. Ensure the code lints successfully
-6. Create a Pull Request
+2. Install pnpm if you haven't already: `npm install -g pnpm`
+3. Install dependencies: `pnpm install`
+4. Make your changes
+5. Test your changes thoroughly
+6. Ensure the code lints successfully
+7. Create a Pull Request
 
 ### Styleguides
 
@@ -84,12 +85,21 @@ apple-notifier-mcp/
 ## Setting Up Development Environment
 
 1. Ensure you have Node.js >= 18 installed
-2. Clone your fork of the repository
-3. Run `npm install` to install dependencies
-4. Run `npm run dev` to start in development mode
-5. Make your changes
-6. Test thoroughly
-7. Submit a PR
+2. Install pnpm: `npm install -g pnpm`
+3. Clone your fork of the repository
+4. Run `pnpm install` to install dependencies
+5. Run `pnpm dev` to start in development mode
+6. Make your changes
+7. Test thoroughly with `pnpm test`
+8. Submit a PR
+
+### Available Scripts
+
+- `pnpm build` - Build the project
+- `pnpm start` - Start the MCP server
+- `pnpm dev` - Start in watch mode for development
+- `pnpm clean` - Remove build artifacts
+- `pnpm test` - Run tests (to be implemented)
 
 ## Questions?
 

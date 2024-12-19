@@ -5,15 +5,32 @@ on:
     types: [created]
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
-      - run: npm ci
-      - run: npm build
-      - uses: JS-DevTools/npm-publish@v3
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+          
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          token: ${{ secrets.NPM_TOKEN }}
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Build
+        run: pnpm build
+        
+      - name: Run tests
+        run: pnpm test
+        
+      - name: Publish to NPM
+        run: pnpm publish --no-git-checks --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -97,26 +97,34 @@ cd apple-notifier-mcp
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Build the project:
 ```bash
-npm run build
+pnpm build
 ```
 
 4. Start in development mode:
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ### Available Scripts
 
-- `npm run build` - Build the project
-- `npm run start` - Start the MCP server
-- `npm run dev` - Start in watch mode for development
-- `npm run clean` - Remove build artifacts
-- `npm test` - Run tests (to be implemented)
+- `pnpm build` - Build the project
+- `pnpm start` - Start the MCP server
+- `pnpm dev` - Start in watch mode for development
+- `pnpm clean` - Remove build artifacts
+- `pnpm test` - Run tests (to be implemented)
+
+### Package Manager
+
+This project uses [pnpm](https://pnpm.io/) for dependency management. If you don't have pnpm installed, you can install it with:
+
+```bash
+npm install -g pnpm
+```
 
 ## Contributing
 

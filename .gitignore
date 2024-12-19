@@ -1,4 +1,18 @@
+# Dependencies
 node_modules/
+.pnpm-store/
+
+# Build
 build/
-.DS_Store
+
+# Logs
 *.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+
+# Lock files
+package-lock.json
+# Keep pnpm-lock.yaml
