@@ -101,6 +101,39 @@ apple-notifier-mcp/
 - `pnpm clean` - Remove build artifacts
 - `pnpm test` - Run tests (to be implemented)
 
-## Questions?
+## CI/CD
 
-Feel free to open an issue with your question. We'll do our best to answer promptly.
+This project uses GitHub Actions for continuous integration and deployment:
+
+### Continuous Integration
+- Runs on every push and pull request to `main`
+- Tests on macOS with Node.js 18.x and 20.x
+- Builds the project
+- Runs tests
+- Verifies osascript functionality
+- Tests basic notification functionality
+
+### Publishing to NPM
+To publish a new version:
+1. Update version in `package.json`
+2. Create and push a new tag:
+   ```bash
+   git tag v1.0.0  # Use appropriate version
+   git push origin v1.0.0
+   ```
+3. Create a new release on GitHub using the tag
+4. The GitHub Action will automatically:
+   - Build the project
+   - Run tests
+   - Publish to NPM
+
+## Support
+
+If you encounter any issues or have questions:
+1. Check the [Issues](https://github.com/turlockmike/apple-notifier-mcp/issues) page
+2. Open a new issue if your problem hasn't been reported
+3. Provide as much detail as possible, including:
+   - Node.js version
+   - macOS version
+   - Steps to reproduce
+   - Expected vs actual behavior
