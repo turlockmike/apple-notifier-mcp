@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest  # Using macOS since this is a macOS-specific package
     steps:
       - uses: actions/checkout@v4
       
@@ -30,6 +30,12 @@ jobs:
       - name: Run tests
         run: pnpm test
         
+      - name: Test notification functionality
+        run: |
+          pnpm start &
+          sleep 2
+          curl -X POST -H "Content-Type: application/json" -d '{"name":"send_notification","arguments":{"title":"Publish Test","message":"Testing notifications before publishing"}}' http://localhost:3000/rpc
+          
       - name: Publish to NPM
         run: pnpm publish --no-git-checks --access public
         env:
