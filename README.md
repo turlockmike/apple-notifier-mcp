@@ -24,7 +24,7 @@ An MCP (Model Context Protocol) server that enables sending native macOS notific
 
 1. Install the package:
 ```bash
-npm install @turlockmike/apple-notifier-mcp
+npm install apple-notifier-mcp
 ```
 
 2. Add to your MCP configuration file:
@@ -35,7 +35,7 @@ For Cline (`cline_mcp_settings.json`):
   "mcpServers": {
     "apple-notifier": {
       "command": "node",
-      "args": ["/path/to/node_modules/@turlockmike/apple-notifier-mcp/build/index.js"]
+      "args": ["/path/to/node_modules/apple-notifier-mcp/build/index.js"]
     }
   }
 }
@@ -47,7 +47,7 @@ For Claude Desktop (`claude_desktop_config.json`):
   "mcpServers": {
     "apple-notifier": {
       "command": "node",
-      "args": ["/path/to/node_modules/@turlockmike/apple-notifier-mcp/build/index.js"]
+      "args": ["/path/to/node_modules/apple-notifier-mcp/build/index.js"]
     }
   }
 }

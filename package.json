@@ -1,5 +1,5 @@
 {
-  "name": "@turlockmike/apple-notifier-mcp",
+  "name": "apple-notifier-mcp",
   "version": "1.0.0",
   "description": "An MCP server for sending native macOS notifications",
   "main": "build/index.js",
