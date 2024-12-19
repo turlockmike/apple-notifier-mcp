@@ -39,26 +39,6 @@ For Claude Desktop (`claude_desktop_config.json`):
 }
 ```
 
-## Usage
-
-Send notifications with the `send_notification` tool:
-
-```typescript
-// Basic notification
-await mcp.use_tool('apple-notifier', 'send_notification', {
-  title: "Hello",
-  message: "This is a notification"
-});
-
-// With all options
-await mcp.use_tool('apple-notifier', 'send_notification', {
-  title: "Meeting Reminder",
-  message: "Team standup in 5 minutes",
-  subtitle: "Daily Standup",
-  sound: true
-});
-```
-
 ### Parameters
 
 - `title` (required): string - The title of the notification
@@ -72,4 +52,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
 
 ## License
 
-ISC License - see the [LICENSE](LICENSE) file for details.
+MIT License - see the [LICENSE](LICENSE) file for details.

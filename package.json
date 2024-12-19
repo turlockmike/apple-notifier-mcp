@@ -40,9 +40,8 @@
     "test": "echo \"No tests yet\""
   },
   "type": "module",
-  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.10.2",
     "typescript": "^5.7.2"
