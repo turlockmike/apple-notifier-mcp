@@ -2,6 +2,8 @@
 
 Send native macOS notifications and interact with system dialogs through any MCP-compatible client like Claude Desktop or Cline.
 
+<a href="https://glama.ai/mcp/servers/t1w1dq4wy4"><img width="380" height="200" src="https://glama.ai/mcp/servers/t1w1dq4wy4/badge" alt="apple-notifier-mcp MCP server" /></a>
+
 ## Prerequisites
 
 - macOS
