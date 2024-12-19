@@ -1,18 +1,5 @@
-import { promisify } from 'util';
-import { exec } from 'child_process';
-import { NotificationParams, NotificationError, NotificationErrorType } from './types.js';
-
-const execAsync = promisify(exec);
-
-/**
- * Escapes special characters in strings for AppleScript
- */
-function escapeString(str: string): string {
-  // Escape for both AppleScript and shell
-  return str
-    .replace(/'/g, "'\\''")
-    .replace(/"/g, '\\"');
-}
+import { NotificationParams, NotificationError, NotificationErrorType } from '../types.js';
+import { execAsync, escapeString } from '../utils/command.js';
 
 /**
  * Validates notification parameters
@@ -38,7 +25,6 @@ function validateParams(params: NotificationParams): void {
       'Subtitle must be a string'
     );
   }
-
 }
 
 /**
@@ -56,7 +42,6 @@ function buildNotificationCommand(params: NotificationParams): string {
   if (sound) {
     script += ` sound name "default"`;
   }
-
   
   return `osascript -e '${script}'`;
 }
