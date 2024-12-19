@@ -2,6 +2,7 @@
   "name": "apple-notifier-mcp",
   "version": "1.0.0",
   "description": "An MCP server for sending native macOS notifications",
+  "packageManager": "pnpm@8.12.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
@@ -34,8 +35,8 @@
     "start": "node build/index.js",
     "dev": "tsc -w",
     "clean": "rm -rf build",
-    "prepare": "npm run clean && npm run build",
-    "prepublishOnly": "npm test",
+    "prepare": "pnpm clean && pnpm build",
+    "prepublishOnly": "pnpm test",
     "test": "echo \"No tests yet\""
   },
   "type": "module",
