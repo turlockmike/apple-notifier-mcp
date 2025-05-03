@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/turlockmike-apple-notifier-mcp-badge.png)](https://mseep.ai/app/turlockmike-apple-notifier-mcp)
+
 # Apple Notifier MCP Server
 
 [![smithery badge](https://smithery.ai/badge/apple-notifier-mcp)](https://smithery.ai/server/apple-notifier-mcp)
