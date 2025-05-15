@@ -47,6 +47,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.4"
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "mcp-evals": "^1.0.18"
   }
 }
