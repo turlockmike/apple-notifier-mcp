@@ -239,7 +239,7 @@ class AppleNotifierServer {
               content: [
                 {
                   type: 'text',
-                  text: 'Notification sent successfully. If you don\'t see the notification, ensure Script Editor has notification permissions enabled in System Settings.',
+                  text: 'Notification sent successfully. Note: If not visible, check Script Editor notification permissions in System Settings.',
                 },
               ],
             };
