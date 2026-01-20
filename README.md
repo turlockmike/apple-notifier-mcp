@@ -53,6 +53,28 @@ For Claude Desktop (`claude_desktop_config.json`):
 }
 ```
 
+## ⚠️ Important: First-Time Setup
+
+**If notifications aren't showing up**, you need to grant notification permissions to Script Editor:
+
+1. Open **Script Editor** (found in `/Applications/Utilities/Script Editor.app`)
+2. Run this command in Script Editor:
+   ```applescript
+   display notification "Test notification" with title "Testing"
+   ```
+3. Click the **Run** button (▶️)
+4. macOS will prompt you to allow Script Editor to send notifications - click **Allow**
+5. Now try sending a notification from Claude Desktop again - it should work!
+
+**Why is this needed?** When you use `osascript` to send notifications (which this MCP server does), macOS ties the notification permissions to Script Editor, not to the calling application (Claude Desktop or Terminal). This is a macOS design decision.
+
+### Alternative: Do Not Disturb / Focus Mode
+
+If notifications still don't appear after granting permissions:
+- Make sure **Focus** (Do Not Disturb) is turned **OFF** in System Settings
+- Check **System Settings > Notifications > Script Editor** and ensure notifications are enabled
+- Verify that "Allow Notifications" is enabled (not just "Alerts")
+
 ## Features
 
 ### Send Notifications
@@ -146,6 +168,40 @@ const files = await client.use_mcp_tool("apple-notifier", "select_file", {
   multiple: true
 });
 ```
+
+## Troubleshooting
+
+### Notifications Not Appearing
+
+If the MCP server says the notification was sent successfully but you don't see it:
+
+1. **Grant Script Editor Permissions (Most Common Issue)**
+   - Open Script Editor (`/Applications/Utilities/Script Editor.app`)
+   - Paste and run: `display notification "Test" with title "Test"`
+   - Click "Allow" when macOS asks for notification permissions
+   - This is required because `osascript` uses Script Editor's permissions
+
+2. **Check Focus/Do Not Disturb Mode**
+   - Disable Focus mode in the menu bar or System Settings
+   - Notifications are suppressed when Focus is enabled
+
+3. **Verify Notification Settings**
+   - Go to **System Settings > Notifications > Script Editor**
+   - Ensure "Allow Notifications" is enabled
+   - Set notification style to "Banners" or "Alerts" (not "None")
+
+4. **Test Manually**
+   - Open Terminal and run:
+     ```bash
+     osascript -e 'display notification "Test message" with title "Test Title"'
+     ```
+   - If this doesn't show a notification, the issue is with system permissions, not the MCP server
+
+### Understanding Notification Icons
+
+When using `osascript`, notifications will appear with the **Script Editor** icon, not the Claude Desktop icon. This is a limitation of how macOS handles AppleScript notifications.
+
+If you need notifications with a custom icon, consider using alternative tools like `terminal-notifier` (requires `brew install terminal-notifier`).
 
 ## Contributing
 
