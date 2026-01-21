@@ -13,6 +13,45 @@ Send native macOS notifications and interact with system dialogs through any MCP
 - Node.js >= 18
 - An MCP-compatible client (Claude Desktop, Cline)
 
+## Troubleshooting: Notifications Not Appearing
+
+For notifications to display, the terminal or application running the MCP server needs notification permissions in macOS.
+
+### Grant Notification Permissions
+
+1. **For Claude Desktop users:**
+   - Open **System Preferences** (or **System Settings** on macOS Ventura+)
+   - Go to **Notifications**
+   - Find **Node** or **terminal-notifier** (whichever appears)
+   - Enable **Allow Notifications**
+   - Set alert style to **Banners** or **Alerts**
+
+2. **For Claude Code / Terminal users:**
+   - Open **System Preferences** > **Notifications**
+   - Find **Terminal** (or **iTerm** if using iTerm2)
+   - Enable **Allow Notifications**
+
+3. **If the app doesn't appear in Notifications settings:**
+   - Run a test notification manually in Terminal:
+     ```bash
+     osascript -e 'display notification "Test" with title "Hello"'
+     ```
+   - This should trigger macOS to prompt for or register notification permissions
+   - Then check System Preferences again
+
+4. **Check Focus Mode / Do Not Disturb:**
+   - Ensure Focus Mode or Do Not Disturb is not enabled
+   - Check the Control Center in the menu bar
+
+### Verify Notifications Work
+
+Test from terminal before using via MCP:
+```bash
+osascript -e 'display notification "Test message" with title "Test title"'
+```
+
+If this shows a notification, the MCP server should work correctly.
+
 ## Installation
 
 ### Installing via Smithery
