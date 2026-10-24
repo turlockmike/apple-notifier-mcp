@@ -2,7 +2,7 @@
 
 # Apple Notifier MCP Server
 
-[![smithery badge](https://smithery.ai/badge/apple-notifier-mcp)](https://smithery.ai/server/apple-notifier-mcp)
+[![LightNow capabilities](https://lightnow.ai/badge/io.github.turlockmike/apple-notifier-mcp)](https://lightnow.ai/servers/io.github.turlockmike/apple-notifier-mcp)
 Send native macOS notifications and interact with system dialogs through any MCP-compatible client like Claude Desktop or Cline.
 
 <a href="https://glama.ai/mcp/servers/t1w1dq4wy4"><img width="380" height="200" src="https://glama.ai/mcp/servers/t1w1dq4wy4/badge" alt="apple-notifier-mcp MCP server" /></a>
